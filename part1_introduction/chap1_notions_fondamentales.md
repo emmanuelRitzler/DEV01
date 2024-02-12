@@ -2,61 +2,61 @@
 
 ## Sommaire
 
-* [Introduction & histoire de JS](#chapter1)
-* [Notion de type en JS](#chapter2)
-* [Les différents types en JS1](#chapter3)
-  * [Types primitifs](#section31)
-  * [Les types Objects](#section32)
-  * [Ce qui est considéré comme faux en JS](#section33)
-  * [ Evaluations courcircuit](#section34)
-  * [Les chaînes de caractères Interpolation](#section35)]
-
-* [Portée (ou scope en Anglais) des variables en JS](#chapter4)
-  * [Remonter des scopes](#section41)
-  * [Exercice scope calcul (sans coder) ](#section42)
-  * [Exercice TDZ (temporal dead zone) (sans coder)](#section43)
-  * [Exercice for let (sans coder)](#section44)
-* [ Déclaration d'une constante](#chapter5)
-  * [Exercice const & for](#section51)
-* [var définition obsolète !](#chapter6)
-
-* [Introduction à la notion de fonction](#chapter7)
-
-  * [Paramètres facultatif ](#section71)
-    * [ Exercice ttc ](#section711)
-  * [Syntaxe par décomposition](#section72)
-    * [Exercice fonction ttc spread operator](#section721)
-  * [littéral pour définir des paramètres](#section73)
-  * [this dans le contexte de l'appel d'une fonction sur un objets](#section74)
-  * [Déclaration de fonction](#section75)
-    * [Exercice function & expression](#section751)
-    * [Exercice déclaration d'une fonction](#section752)
-  * [L'objet arguments et paramètres d'une fonction](#section76)
-
-  * [Les fonctions fléchées ](#section77)
-  * [Fonction constructeur](#section78)
-  * [Exercice de synthèse corrigé un effet de bord](#section79)
-  * [Introduction à la notion de prototype pour une fonction](#section7100)
-    * [(Application) Ajouter une propriété sur un constructeur](#section7101)
-
-    * [Exercice prototype average pour la fonction User](#section7102)
-
-* [Quelques fonctions JS utiles pour le traitement des données](#chapter8)
-
-  * [La fonction JS map](#section81)
-    * [Exercice puissance 3](#section8101)
-    * [Exercice max](#section8102)
-    * [Exercice reduce sum impair](#section8103)
-    * [Exercice fonction map sur un littéral](#section8104)
-
-* [Affectation par décomposition](#chapter9)
-  * [Exercice permutations](#section91)
-  * [Exercice assigner par décomposition](#section92)
-  * [Exercice iterate destructuring](#section93)
-
-* [Le spread operator](#chapter10)
-  * [Exercice push value ](#section101)
-  * [Nom de propriété calculé et décomposition](#section102)
+- [JS rappel des fondamentaux](#js-rappel-des-fondamentaux)
+  - [Sommaire](#sommaire)
+  - [Introduction \& histoire de JS ](#introduction--histoire-de-js-)
+  - [Notion de type en JS ](#notion-de-type-en-js-)
+  - [Les différents types en JS ](#les-différents-types-en-js-)
+    - [Types primitifs ](#types-primitifs-)
+    - [Les types Objects ](#les-types-objects-)
+  - [Ce qui est considéré comme faux en JS ](#ce-qui-est-considéré-comme-faux-en-js-)
+  - [Evaluations courcircuit  ](#evaluations-courcircuit--)
+  - [Les chaînes de caractères Interpolation  ](#les-chaînes-de-caractères-interpolation--)
+  - [Portée (ou scope en Anglais) des variables en JS ](#portée-ou-scope-en-anglais-des-variables-en-js-)
+    - [Remonter des scopes ](#remonter-des-scopes-)
+    - [Exercice scope calcul (sans coder)  ](#exercice-scope-calcul-sans-coder--)
+    - [Exercice TDZ (temporal dead zone) (sans coder) ](#exercice-tdz-temporal-dead-zone-sans-coder-)
+    - [Exercice for let (sans coder) ](#exercice-for-let-sans-coder-)
+  - [Déclaration d'une constante ](#déclaration-dune-constante-)
+    - [Exercice const \& for ](#exercice-const--for-)
+  - [var définition obsolète ! ](#var-définition-obsolète--)
+  - [Introduction à la notion de fonction ](#introduction-à-la-notion-de-fonction-)
+    - [Paramètres facultatif ](#paramètres-facultatif-)
+      - [Exercice ttc ](#exercice-ttc-)
+    - [Syntaxe par décomposition ](#syntaxe-par-décomposition-)
+      - [Exercice fonction ttc spread operator ](#exercice-fonction-ttc-spread-operator-)
+    - [littéral pour définir des paramètres ](#littéral-pour-définir-des-paramètres-)
+    - [Exercice somme caractères](#exercice-somme-caractères)
+    - [this dans le contexte de l'appel d'une fonction sur un objet ](#this-dans-le-contexte-de-lappel-dune-fonction-sur-un-objet-)
+    - [Déclaration de fonction ](#déclaration-de-fonction-)
+      - [Exercice function \& expression ](#exercice-function--expression-)
+      - [Exercice déclaration d'une fonction ](#exercice-déclaration-dune-fonction-)
+    - [L'objet arguments et paramètres d'une fonction ](#lobjet-arguments-et-paramètres-dune-fonction-)
+    - [Les fonctions fléchées ](#les-fonctions-fléchées-)
+    - [Fonction constructeur  ](#fonction-constructeur--)
+    - [Exercice de synthèse corrigé un effet de bord ](#exercice-de-synthèse-corrigé-un-effet-de-bord-)
+    - [Introduction à la notion de prototype pour une fonction  ](#introduction-à-la-notion-de-prototype-pour-une-fonction--)
+      - [(Application) Ajouter une propriété sur un constructeur ](#application-ajouter-une-propriété-sur-un-constructeur-)
+      - [Exercice prototype average pour la fonction User ](#exercice-prototype-average-pour-la-fonction-user-)
+  - [Quelques fonctions JS utiles pour le traitement des données  ](#quelques-fonctions-js-utiles-pour-le-traitement-des-données--)
+    - [La fonction JS map ](#la-fonction-js-map-)
+      - [Exercice puissance 3 ](#exercice-puissance-3-)
+      - [Exercice max ](#exercice-max-)
+      - [Exercice reduce sum impair ](#exercice-reduce-sum-impair-)
+      - [Exercice fonction map sur un littéral ](#exercice-fonction-map-sur-un-littéral-)
+  - [Affectation par décomposition ](#affectation-par-décomposition-)
+    - [Exercice permutations ](#exercice-permutations-)
+    - [Exercice assigner par décomposition  ](#exercice-assigner-par-décomposition--)
+    - [Exercice iterate destructuring  ](#exercice-iterate-destructuring--)
+  - [Le spread operator ](#le-spread-operator-)
+    - [Exercice push value ](#exercice-push-value-)
+    - [Nom de propriété calculé et décomposition ](#nom-de-propriété-calculé-et-décomposition-)
+  - [Exercice ordre et longueur de mots](#exercice-ordre-et-longueur-de-mots)
+  - [Exercice populations](#exercice-populations)
+  - [Exercice corrigé le code suivant](#exercice-corrigé-le-code-suivant)
+  - [Exercices supplémentaires](#exercices-supplémentaires)
+    - [Exercice accumulator](#exercice-accumulator)
+  - [Exercice copie profonde](#exercice-copie-profonde)
 
 ## Introduction & histoire de JS <a class="anchor" id="chapter1"></a>
 
@@ -596,6 +596,14 @@ function baz({ a, b }){
 baz({ a: 1, b : 2}); // 1 2
 baz({ b: 2, a : 1}); // 1 2
 
+```
+
+### Exercice somme caractères
+
+Soit la chaine de caractères suivantes, créez une fonction qui permet de faire la somme des a dans la chaine de caractères suivantes :
+
+```js
+const message = "aaasldkqldqaaaadkkdjfkdfjaaaa" ;
 ```
 
 ### this dans le contexte de l'appel d'une fonction sur un objet <a class="anchor" id="section74"></a>
