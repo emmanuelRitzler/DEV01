@@ -41,52 +41,47 @@ User.prototype.fullName = function () {
     return `Name : ${this.name} Lastname: ${this.lastname} Age: ${this.age}`
 }
 
-User.prototype.precision = 100;
+// par prototypage j'ajoute une précision
+User.prototype.precision = 10;
 
-// hydratation de l'objet User
-
-const Users = []
-
+// création à la volée d'objet de type User
+const Users = [];
 for (const user of mockUsers) {
-    Users.push(new User({ ...user }))
+    Users.push(new User(user))
 }
-
 // console.log(Users)
 
 User.prototype.average = function () {
-    if (this.notes?.length > 0)
-       return Math.round((this.notes.reduce((acc, curr) => {
-            return acc + curr
-        })) * this.precision / this.notes.length) / this.precision
-
-    return "aucune notation"
+    // this.notes?.length si notes n'est pas défini alors avec ? cela retournera undefined
+    if (this.notes?.length)
+        return Math.round(
+            (this.notes.reduce((acc, curr) => acc + curr, 0)) * this.precision
+            / this.notes.length) / this.precision
 }
-
-console.log(u1.fullName());
 
 for (const user of Users) {
-    console.log(user.name, user.average())
+    console.log(user.average())
 }
 
 
-// héritage 
-function Admin({ name, lastname, age, isAdmin }) {
-    // Appeler le constructeur de la classe parente (User)
-    User.call(this, { name, lastname, age });
+// héritage avec les fonctions constructeurs
 
-    this.isAdmin = isAdmin;
+function Admin({ name, lastname, age, notes, isAdmin }){
+    User.call(this, { name, lastname, age, notes, isAdmin })
+    this.isAdmin = isAdmin
 }
 
-Admin.prototype = Object.create(User.prototype);
+// on set les prototypes de User à la fonction constructeur Admin
+Admin.prototype = Object.create(User.prototype)
 
-const admin = new Admin(
-    { name: 'Alan', lastname: 'Phi', age: 45, isAdmin: true }
-)
+const admins = []
 
-// Ajouter une méthode spécifique à la classe Admin
-Admin.prototype.getAdminDetails = function () {
-    return `${this.fullName()}, Âge: ${this.age}, Admin: ${this.isAdmin}`;
-};
+for (const user of mockUsers) {
+    // ici ils sont tous admin
+    const admin = new Admin({ ...user, isAdmin : true })
+    admin.average = admin.average()
+    admins.push( admin ) 
 
+}
 
-console.log(admin.getAdminDetails());
+console.log(admins)
