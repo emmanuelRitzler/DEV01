@@ -70,7 +70,6 @@ const groupNames_02 = populations.reduce((acc, curr) => {
 
 console.log(groupNames_02)
 
-
 // partie facultative
 const relations = [
     { id: 0, relation: [1, 2, 4] },
