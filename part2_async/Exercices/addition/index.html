@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <title>Exercice 1 : Nombre de caractères</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .result {
+            color: black;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Addition de 1 + 2 + 7.8 = <span class="result"></span></h1>
+    <script>
+        let res = document.querySelector('.result');
+        // création de la fonction asynchrone add
+        function add(number, callback, error, time = 500) {
+            number = parseFloat(number);
+            if (isNaN(number)) error()
+            setTimeout(() => {
+                callback(number)
+            }, time)
+        }
+
+        // additionner les nombres
+        const errorType = () => { throw new Error("Not a number") }
+
+        add("1", number => {
+            let sum = number;
+            add("2", number => {
+                sum += parseFloat(number)
+                add("7.8", number => {
+                    sum += parseFloat(number)
+                    res.innerHTML = sum;
+                }, errorType)
+            }, errorType)
+        }, errorType)
+    </script>
+</body>
+
+</html>

@@ -1,27 +1,26 @@
-const Add = (number, callback, error) => {
-    if (parseFloat(number) != number) {
-        error(number);
-    } else {
-        setTimeout(() => {
-            callback(number);
-        }, 500);
-    }
-};
 
-// throw new Error("ceci n'est pas un nombre")
-const error = (err) => console.error(`Ceci n'est pas un nombre ${err}`);
+// création de la fonction asynchrone add
 
-Add(1, (number) => {
-    // variable définie au niveau du bloc
-    let sum = parseFloat(number);
+function add(number, callback, error, time = 500) {
+    number = parseFloat(number);
+    if (isNaN(number)) error()
+    setTimeout(() => {
+        callback(number)
+    }, time)
+}
 
-    Add("12.9", (number) => {
-        sum += parseFloat(number); // on récupère la somme précédente
+// additionner les nombres
 
-        Add("4.9", (number) => {
-            sum += parseFloat(number);
+const errorType = () => { throw new Error("Not a number") }
 
-            console.log(sum);
-        }, error);
-    }, error);
-}, error);
+add("1", number => {
+    let sum = number;
+    add("BONJOUR", number => {
+        sum += parseFloat(number)
+        add("7.8", number => {
+            sum += parseFloat(number)
+            console.log(sum)
+        }, errorType)
+    }, errorType)
+}, errorType)
+
