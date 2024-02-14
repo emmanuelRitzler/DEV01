@@ -50,7 +50,8 @@ Vous pouvez présenter les résultats recherchés comme suit :
 ]
 ```
 
-1. (Facultatif) Créez une clé relations au tableau populations et ajoutez pour chaque personne le nom de ses relations. Ordonnez les par ordre croissant de nombre de relations. Affichez la personne qui a le plus de relations.
+1. (Facultatif) Créez une clé relations au tableau populations et ajoutez pour chaque personne le nom de ses relations. 
+1. Ordonnez les par ordre croissant de nombre de relations. Affichez la personne qui a le plus de relations.
 
 ```js
 const relations = [
