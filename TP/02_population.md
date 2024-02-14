@@ -20,9 +20,9 @@ const populations = [
 
 1. Ordonnez les données populations par ordre croissant de longueur de nom.
 
-2. Ajoutez une clé **lenName** aux éléments du tableau populations afin d'assignerer la longueur de chaque nom à cette variable.
+1. Ajoutez une clé **lenName** aux éléments du tableau populations afin d'assignerer la longueur de chaque nom à cette variable.
 
-3. Regroupez maintenant dans un nouveau tableau groupNames les noms de même longueur.
+1. Regroupez maintenant dans un nouveau tableau groupNames les noms de même longueur.
 
 Vous pouvez présenter les résultats recherchés comme suit :
 
@@ -50,7 +50,7 @@ Vous pouvez présenter les résultats recherchés comme suit :
 ]
 ```
 
-4. (Facultatif) Créez une clé relations au tableau populations et ajoutez pour chaque personne le nom de ses relations. Ordonnez les par ordre croissant de nombre de relations. Affichez la personne qui a le plus de relations.
+1. (Facultatif) Créez une clé relations au tableau populations et ajoutez pour chaque personne le nom de ses relations. Ordonnez les par ordre croissant de nombre de relations. Affichez la personne qui a le plus de relations.
 
 ```js
 const relations = [
