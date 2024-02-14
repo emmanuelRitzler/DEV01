@@ -95,17 +95,13 @@ const add = (number, callback) => {
 
 Ajoutez maintenant une fonction de callback **error**. Cette fonction sera appelée uniquement lorsqu'une valeur passée en paramètre n'est pas un nombre.
 
-2. Améliorez la fonction d'erreur en levant une exception.
+1. Améliorez la fonction d'erreur en levant une exception.
 
 ```js
 
 throw new Error('Bad number ...')
 
 ```
-
-### Exercice concat async
-
-Soit une fonction message asynchrone qui retournera une chaîne de caractères. Appellez deux fois cette fonction pour concatener le message suivant : "Hello" + "World!".
 
 ## Promesse
 
@@ -212,56 +208,6 @@ Il existe d'autres méthodes dans les promesses :
 -  `Promise.allSettled`
 -  `Promise.race`
 
-### Exercice read json dragon
-
-Vous allez utiliser un module node "fs" qui permet de lire un fichier. 
-
-Récupérez le fichier data/dragons.json sur le serveur et testez le code ci-dessous :
-
-```js
-const fs = require('fs');
-
-fs.readFile('./data/dragons.json', { encoding: 'utf8' }, (err, data) => {
-    // impossible de lire le fichier
-    if (err) {
-        console.log("File read failed:", err);
-        return;
-    }
-    // success
-    // JSON.parse permet de transformer un fichier JSON en un objet JSON JS
-    console.log('File data:', JSON.parse(data)) 
-})
-```
-
-1. Changez le code ci-dessus et utilisez une **promesse** pour gérer la récupération des données au format JSON Object dans JS.
-
-1. Quel est le nom du dragon le plus agé ? Faite un script pour répondre à cette question.
-
-1. Quel est le nom du dragon le plus jeune ? Faite un script pour répondre à cette question.
-
-1. Récupérez les dragons et ordonnez les par age décroissant.
-
-### Exercice relationships dragons (**)
-
-Vous avez un deuxième fichier relationship.json qui contient les relations des dragons entre eux.
-
-En utilisant exclusivement les promesses, créez un tableau ou Map dans lequel vous placerez le nom des amis directs de chaque dragon.
-
-### Exercice fibonacci async (**)
-
-Ecrivez un script qui retourne toutes les 500ms les nombres successifs de la suite de Fibonacci.
-
-```js
-
-1 1 2 3 5 8 13 21 34 ...
-
-```
-
-Essayez maintenant d'encapsuler votre code dans une Promesse, que constatez-vous ?
-
-### Exercice Matrix
-
-Soit la matrice de valeurs munériques dans le fichier data/matrix.json. Certaine(s) valeur(s) sur certaine(s) ligne(s) de cette matrice sont manquantes (notées None). Récupérez ces données et complétez les données manquantes en les remplaçant par la moyenne des valeurs de la ligne.
 
 ## Async await
 
