@@ -25,9 +25,12 @@ npm install nodemon -g
 
 ```json
   "scripts": {
-    "dev" : "nodemon index.js"
+   "dev" : "nodemon --ignore data index.js"
   },
 ```
+
+> [!NOTE]
+> L'option **--ignore** de nodemon permet de ne pas surveiller le dossier data
 
 1. :rocket: Exemples d'import export, vous aurez besoin de fs un module de Node.js dans le projet, dans le fichier index.js
 
@@ -100,7 +103,7 @@ fs.readFile('./data/dragons.json', { encoding: 'utf8' }, (err, data) => {
 
 1. Lire des données par ligne dans un script en console.
 
-1. Créez une fonction qui augmente de 0.15 chaque valeur des lignes et les affiches en console.
+1. Créez une fonction qui augmente de 0.15 % chaque valeur des lignes et les affiches en console.
 
 :rocket: création d'un fichier, exemple.
 
