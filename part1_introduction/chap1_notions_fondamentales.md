@@ -28,6 +28,9 @@
     - [littéral pour définir des paramètres ](#littéral-pour-définir-des-paramètres-)
     - [Exercice somme caractères](#exercice-somme-caractères)
     - [this dans le contexte de l'appel d'une fonction sur un objet ](#this-dans-le-contexte-de-lappel-dune-fonction-sur-un-objet-)
+  - [Exercice sur les objets](#exercice-sur-les-objets)
+    - [Partie 1](#partie-1)
+    - [Partie 2](#partie-2)
     - [Déclaration de fonction ](#déclaration-de-fonction-)
       - [Exercice function \& expression ](#exercice-function--expression-)
       - [Exercice déclaration d'une fonction ](#exercice-déclaration-dune-fonction-)
@@ -52,7 +55,6 @@
     - [Exercice push value ](#exercice-push-value-)
     - [Nom de propriété calculé et décomposition ](#nom-de-propriété-calculé-et-décomposition-)
   - [Exercice ordre et longueur de mots](#exercice-ordre-et-longueur-de-mots)
-  - [Exercice populations](#exercice-populations)
   - [Exercice corrigé le code suivant](#exercice-corrigé-le-code-suivant)
   - [Exercices supplémentaires](#exercices-supplémentaires)
     - [Exercice accumulator](#exercice-accumulator)
@@ -650,6 +652,28 @@ Pour corriger ce problème il faut écrire :
 ```js
 setTimeout(() => o1.f1() , 1000); // ici setTimeout appel la fonction f1.
 ```
+
+Bien sûr, je comprends maintenant. Voici le texte corrigé :
+
+Voici le texte corrigé avec quelques ajustements :
+
+## Exercice sur les objets
+
+### Partie 1 
+
+1. Créez un objet permettant de calculer la somme TTC de produits.
+1. Définissez une méthode qui permet de spécifier une précision pour les valeurs retournées par l'objet.
+
+### Partie 2 
+
+1. Créez un objet permettant de compter tous les caractères d'une chaîne.
+1. Ajoutez une méthode qui recherche si un caractère est présent dans la chaîne.
+1. Intégrez une méthode qui recherche une chaîne de caractères dans une autre chaîne.
+1. Intégrez une méthode qui supprime des caractères.
+
+Envisagez maintenant l'objet de la partie 2 à être appelé dans un autre objet.
+
+1. L'objet à implémenter doit prendre un texte et retourner un tableau de nombres qui donne uniquement les occurrences de chaque lettre.
 
 ### Déclaration de fonction <a class="anchor" id="section75"></a>
 
@@ -1254,71 +1278,7 @@ const students = [ "Alan", "Philippe", "Tony", "Geraldine", "Michelle", "Phi" ];
 const numbers = [ 10, 7, 5, 1, 10, 5];
 ```
 
-## Exercice populations
 
-```js
-const populations = [
-  { id: 0, name: "Alan" },
-  { id: 1, name: "Albert" },
-  { id: 2, name: "Jhon" },
-  { id: 3, name: "Brice" },
-  { id: 4, name: "Alexendra" },
-  { id: 5, name: "Brad" },
-  { id: 6, name: "Carl" },
-  { id: 7, name: "Dallas" },
-  { id: 8, name: "Dennis" },
-  { id: 9, name: "Edgar" },
-  { id: 10, name: "Erika" },
-  { id: 11, name: "Isaac" },
-  { id: 12, name: "Ian" },
-];
-```
-
-1. Ordonnez les données populations par ordre croissant de longueur de nom.
-
-2. Ajoutez une clé **lenName** aux éléments du tableau populations afin d'assignerer la longueur de chaque nom à cette variable.
-
-3. Regroupez maintenant dans un nouveau tableau groupNames les noms de même longueur.
-
-Vous pouvez présenter les résultats recherchés comme suit :
-
-```js
-[
-  [ { id: 12, name: 'Ian', lenName: 3 } ],
-  [
-    { id: 0, name: 'Alan', lenName: 4 },
-    { id: 2, name: 'Jhon', lenName: 4 },
-    { id: 5, name: 'Brad', lenName: 4 },
-    { id: 6, name: 'Carl', lenName: 4 }
-  ],
-  [
-    { id: 3, name: 'Brice', lenName: 5 },
-    { id: 9, name: 'Edgar', lenName: 5 },
-    { id: 10, name: 'Erika', lenName: 5 },
-    { id: 11, name: 'Isaac', lenName: 5 }
-  ],
-  [
-    { id: 1, name: 'Albert', lenName: 6 },
-    { id: 7, name: 'Dallas', lenName: 6 },
-    { id: 8, name: 'Dennis', lenName: 6 }
-  ],
-  [ { id: 4, name: 'Alexendra', lenName: 9 } ]
-]
-```
-
-4. (Facultatif) Créez une clé relations au tableau populations et ajoutez pour chaque personne le nom de ses relations. Ordonnez les par ordre croissant de nombre de relations. Affichez la personne qui a le plus de relations.
-
-```js
-const relations = [
-  { id : 0 , relation : [1, 2, 4]},
-  { id : 3 , relation : [7, 8]},
-  { id : 4 , relation : [2, 7, 8, 11]},
-  { id : 5 , relation : [1, 2, 4]},
-  { id : 7 , relation : [2, 3, 5, 9]},
-  { id : 9 , relation : [1, 2, 4, 8, 11]},
-  { id : 11 , relation : [1, 2, 9, 10,]},
-]
-```
 
 ## Exercice corrigé le code suivant 
 
