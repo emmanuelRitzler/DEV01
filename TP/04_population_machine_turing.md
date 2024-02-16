@@ -1,6 +1,6 @@
 # 04 TP Population & Machine de turing
 
-:rocket: Faites le QCM par équipe, répondez en justifant en quelques mots votre réponse.
+:rocket: Faites ce TP par équipe, répondez en justifant en quelques mots votre réponse.
 
 La première partie est obligatoire, la deuxième est facultative.
 
@@ -79,6 +79,8 @@ const populations = [
    - Modifiez la bande initiale et testez la machine de Turing avec différents nombres binaires pour vous assurer qu'elle fonctionne correctement.
 
 ### Code de départ
+
+:package:
 
 ```js
 // Définition de la bande (tape) de la machine de Turing
