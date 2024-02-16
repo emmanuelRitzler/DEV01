@@ -57,10 +57,15 @@ JS première version 1995, auteur Brendan Eich.
 
 Rappelons que JS est un langage interprété dont le typage est faible. Mais attention, cela ne veut pas dire que JS ne définit pas un type à ses variables.
 
-Un typage faible permet les convertions de type implicite :
+:pill: Un typage faible permet les convertions de type implicite et explicite :
 
 ```js
+// conversion implicite 
 let foo = 1 + "2";
+
+// Conversions explicites
+let str = "123";    // chaine est de type string
+let number = Number(str); // 
 ```
 
 Et JS a un typage dynamique, le type est déterminé à l'exécution :
@@ -70,7 +75,8 @@ Et JS a un typage dynamique, le type est déterminé à l'exécution :
 let a = 1;
 ```
 
-Un langage interprété utilise le code source pour le compiler puis l'exécuter, il n'y a pas de création d'exécutable définitif. Pour chaque exécution, JS repartira du code source.
+> [!NOTE] 
+> Un langage interprété utilise le code source pour le compiler puis l'exécuter, il n'y a pas de création d'exécutable définitif. Pour chaque exécution, JS repartira du code source.
 
 Le moteur JS de compilation peut taguer du code qui se répète et créer, pour ces parties uniquement, un exécutable "définitif".
 
@@ -507,7 +513,6 @@ function bar() {
 }
 bar(); //  2 10
 ```
-
 
 ## Introduction à la notion de fonction <a class="anchor" id="chapter7"></a>
 
