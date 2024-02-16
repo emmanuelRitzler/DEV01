@@ -6,6 +6,8 @@ La première partie est obligatoire, la deuxième est facultative.
 
 ## Partie 1 : Traitement des données populations
 
+:card_file_box:
+
 ```js
 const populations = [
   { id: 0, name: "Alan", age: 25, country: "USA" },
@@ -47,11 +49,12 @@ const populations = [
 
 ## Partie 2 : Machine de Turing Facultatif 
 
-**Objectif** : Mettre en pratique les concepts de la machine de Turing en JavaScript pour réaliser l'addition binaire.
+
+:bulb: **Objectif** : Mettre en pratique les concepts de la machine de Turing en JavaScript pour réaliser l'addition binaire, notez que le code d'exemple ci-après vous aidera à comprendre la machine de Turing.
 
 ### Introduction
 
-Dans cet exercice, nous allons créer une machine de Turing simple en JavaScript pour ajouter 1 à un nombre binaire. Nous avons déjà une bande (tape) prête avec un nombre binaire initial.
+:rocket: Dans cet exercice, nous allons créer une machine de Turing simple en JavaScript pour ajouter 1 à un nombre binaire. Nous avons déjà une bande (tape) prête avec un nombre binaire initial.
 
 ### Instructions
 
