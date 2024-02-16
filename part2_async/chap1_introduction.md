@@ -2,7 +2,7 @@
 
 ## Motivation
 
->[!NOTE] L'asynchronisme est un concept clé en programmation JavaScript. Il permet d'exécuter des tâches en arrière-plan sans bloquer l'exécution du reste du code.
+> [!NOTE] L'asynchronisme est un concept clé en programmation JavaScript. Il permet d'exécuter des tâches en arrière-plan sans bloquer l'exécution du reste du code.
 
 Nécessité de l'Asynchronisme dans le Développement Web Moderne.
 
@@ -22,12 +22,42 @@ Ce mécanisme constitue le coeur de JS.
 
 Il n'y a pas de parallèlisme en JS, tout est géré dans le même thread.
 
-![task queue](images/async.png)
+### Exemple de script asynchrone
+
+```js
+console.log('START')
+setTimeout( () => console.log('ASYNC'), 500 )
+console.log('END')
+```
+
+- Diagramme de séquences du script précédent
+
+```mermaid
+sequenceDiagram
+  participant MainThread as "Main Thread"
+  participant TaskQueue as "Task Queue"
+  participant CallbackFunction as "Callback Function"
+
+  MainThread->>TaskQueue: Envoie la tâche setTimeout
+  MainThread->>MainThread: Exécute console.log('START')
+  MainThread->>MainThread: Exécute console.log('END')
+  TaskQueue->>MainThread: La tâche setTimeout est prête à être exécutée
+  MainThread->>TaskQueue: Exécute la tâche setTimeout
+  TaskQueue->>CallbackFunction: Appelle la fonction de rappel de setTimeout
+  Note over CallbackFunction: Opération asynchrone (console.log('ASYNC'))
+  CallbackFunction->>MainThread: Retourne le contrôle à la task principale
+  MainThread->>MainThread: Continue l'exécution de la task principale
+
+```
 
 Par exemple, lorsque vous faites une requête sur une API, vous pouvez fournir à une fonction asynchrone une fonction de callback qui sera exécutée dans la stack d'éxecution une fois la réponse consommée, sans bloquer le reste du code.
 
 Remarques : il peut y avoir plusieurs Task Queue, par exemple le navigateur peut **prioriser** certaines actions asynchrones. Par défaut dans une Task Queue les callbacks sont en mode FIFO (first in first out ou premier entrée premier exécuté).
 
+
+Un petit dessin pour résumer :
+
+<img src="./images/async.png" width="500" />
 
 ## Exemple de code synchrone
 
@@ -137,6 +167,13 @@ Vous pouvez voir comment cela crée une structure pyramidale de fonctions de rap
 - Pending : En attente d'exécution
 - Resolved : Opération réussie
 - Rejected : Opération échouée
+
+[!schema](./images/promise.png)
+
+```mermaid
+
+```
+
 
 - La méthode **then** est une méthode qui sera appelée après le succès de la promesse; en cas d'échec la méthode **catch** sera appelée.
 
